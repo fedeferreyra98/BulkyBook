@@ -18,5 +18,11 @@ namespace BulkyBookWeb.Controllers
             IEnumerable<Category> objCategoryList = _db.Categories;
             return View(objCategoryList); // This way i pass the object to the view so i can show it in html
         }
+
+        //GET
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
