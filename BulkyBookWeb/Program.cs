@@ -12,11 +12,13 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 var app = builder.Build();
 
 // migrate any database changes on startup (includes initial db creation)
+/* Commented this to see if it improves startup performances, discomment (if that word exists) to duplicate the database if changing workstation
 using (var scope = app.Services.CreateScope())
 {
     var dataContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     dataContext.Database.Migrate();
 }
+*/
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
