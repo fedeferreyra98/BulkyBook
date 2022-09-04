@@ -24,5 +24,19 @@ namespace BulkyBookWeb.Controllers
         {
             return View();
         }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken] //This help to prevent cross site request forgery, more on that on dotnetmastery.com/Home/Vlog
+        public IActionResult Create(Category obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(obj);
+                _db.SaveChanges(); //This pushes the changes to the database
+                return RedirectToAction("Index"); //This way we redirect the user to Category Index
+            }
+            return View(obj);
+        }
     }
 }
