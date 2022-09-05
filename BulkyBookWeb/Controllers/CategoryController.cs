@@ -104,7 +104,7 @@ namespace BulkyBookWeb.Controllers
         }
 
         //POST
-        [HttpPost]
+        [HttpPost, ActionName("Delete")] // Research more on why ActionName("Delete") improves the code
         [ValidateAntiForgeryToken] 
         public IActionResult DeletePOST(int? id)
         {
