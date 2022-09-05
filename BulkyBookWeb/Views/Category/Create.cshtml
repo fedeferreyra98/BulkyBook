@@ -24,4 +24,10 @@
     </div>
     
 </form>
+@section Scripts{ 
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
+@*Adding this partial view now the validations are being made in the client side (except the one we introduced of name==displayorder*@
 @*Because im not passing any argument in return View() in this action result, i have to indicate model Category so i can collect the Category.Name and Category.DisplayOrder*@
